@@ -62,13 +62,15 @@
 ~~~
 
 1. 
+<code>\ 
 SELECT
   COUNT(id) AS cnt
 FROM basic.pokemon
 WHERE
   type2 IS NULL;
+</code>
 
-## type2 값이 비어 있는 포켓몬만 골라서 전체 개수를 세기
+# type2 값이 비어 있는 포켓몬만 골라서 전체 개수를 세기
 
 2. 
 SELECT
@@ -82,7 +84,7 @@ GROUP BY
 ORDER BY
   cnt DESC;
 
-##type2가 없는 포켓몬만 대상으로 type1별 개수를 구하고, 많은 순으로 정렬
+# type2가 없는 포켓몬만 대상으로 type1별 개수를 구하고, 많은 순으로 정렬
 
 3.
 SELECT
@@ -92,7 +94,7 @@ FROM basic.pokemon
 GROUP BY
   type1;
 
-##전체 포켓몬을 대상으로 type1별 포켓몬 수를 집계
+# 전체 포켓몬을 대상으로 type1별 포켓몬 수를 집계
 
 4.
 SELECT
@@ -102,7 +104,7 @@ FROM basic.pokemon
 GROUP BY
   is_legendary;
 
-##전설 포켓몬 여부에 따라 포켓몬 수를 집계
+# 전설 포켓몬 여부에 따라 포켓몬 수를 집계
 
 5.
 SELECT
@@ -111,7 +113,7 @@ FROM basic.trainer
 WHERE
   name = 'Iris';
 
-##basic.trainer 테이블에서 이름이 Iris인 트레이너의 정보를 조회
+# basic.trainer 테이블에서 이름이 Iris인 트레이너의 정보를 조회
 
 6. 
 SELECT
@@ -120,7 +122,7 @@ FROM basic.trainer
 WHERE
   name IN ('Iris', 'Whitney', 'Cynthia');
 
-##름이 Iris, Whitney, Cynthia인 트레이너들의 정보를 한 번에 조회
+# 이름이 Iris, Whitney, Cynthia인 트레이너들의 정보를 한 번에 조회
 
 
 
