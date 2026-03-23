@@ -73,6 +73,7 @@ WHERE
 # type2 값이 비어 있는 포켓몬만 골라서 전체 개수를 세기
 
 2. 
+<code>\
 SELECT
   type1,
   COUNT(id) AS cnt
@@ -83,44 +84,53 @@ GROUP BY
   type1
 ORDER BY
   cnt DESC;
+</code>
 
 # type2가 없는 포켓몬만 대상으로 type1별 개수를 구하고, 많은 순으로 정렬
 
 3.
+<code>\
 SELECT
   type1,
   COUNT(id) AS cnt
 FROM basic.pokemon
 GROUP BY
   type1;
+</code>
 
 # 전체 포켓몬을 대상으로 type1별 포켓몬 수를 집계
 
 4.
+<code>\
 SELECT
   is_legendary,
   COUNT(id) AS cnt
 FROM basic.pokemon
 GROUP BY
   is_legendary;
+</code>
 
 # 전설 포켓몬 여부에 따라 포켓몬 수를 집계
 
 5.
+<code>\
 SELECT
   *
 FROM basic.trainer
 WHERE
   name = 'Iris';
+</code>
 
 # basic.trainer 테이블에서 이름이 Iris인 트레이너의 정보를 조회
 
 6. 
+<code>\
 SELECT
   *
 FROM basic.trainer
 WHERE
   name IN ('Iris', 'Whitney', 'Cynthia');
+</code>
 
 # 이름이 Iris, Whitney, Cynthia인 트레이너들의 정보를 한 번에 조회
 
@@ -134,7 +144,7 @@ WHERE
 * SELECT, FROM, WHERE을 활용하는 방법을 설명할 수 있다. 
 ~~~
 
-GROUP BY ALL
+# GROUP BY ALL
 : 집계 대상이 아닌 컬럼들을 기준으로 자동 그룹화.
 
 
@@ -152,7 +162,7 @@ GROUP BY ALL
 4. 쿼리 작성 --> 데이터가 있는 데이블 찾기 -1개(그냥활용) / 2개이상 (연결방법 고민하기 - join등)
 5. 데이터 정합성 확인 --> 예상한 결과와 동일한지 확인 
 6. 쿼리 가독성 --> 나중을 위해 깔끔하게 쿼리 작성
-7. 쿼리 저장 --> 쿼리는 재사용되므로 문서로 저장 
+7. 쿼리 저장 --> 쿼리는 재사용되므로 문서로 저장 <br>
 **반복이 중요**
 
 
@@ -164,17 +174,17 @@ GROUP BY ALL
 * 생산성 도구를 만들 수 있다.
 ~~~
 
-##쿼리 작성 템플릿
--쿼리를 작성하는 목표, 확인할 지표
--쿼리 계산 방법
--데이터의 기간
--사용할 테이블
--join key
--데이터 특징
+##쿼리 작성 템플릿 <br>
+-쿼리를 작성하는 목표, 확인할 지표 <br>
+-쿼리 계산 방법 <br>
+-데이터의 기간 <br>
+-사용할 테이블 <br>
+-join key <br>
+-데이터 특징 <br>
 
---> 템플릿을 사용하자라고 하면 생기는 일
-: 템플릿을 사용하는 것을 까먹음 => 습관 형성이 되지 않음. 이 부분을 개선하기 위해 생산성 도구를 활용. 
-**Espanso 
+--> 템플릿을 사용하자라고 하면 생기는 일 <br>
+: 템플릿을 사용하는 것을 까먹음 => 습관 형성이 되지 않음. 이 부분을 개선하기 위해 생산성 도구를 활용.  <br>
+**Espanso <br>
 -특정 단어를 입력하면 원하는 문장(템프릿)으로 바로 변경하능한 도구.!!
 
 
