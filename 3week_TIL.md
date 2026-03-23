@@ -134,7 +134,16 @@ WHERE
 
 # 이름이 Iris, Whitney, Cynthia인 트레이너들의 정보를 한 번에 조회
 
+7.     
+<code>\
+SELECT        
+ COUNT (id) AS trainer_cnt
+FROM basic.trainer         
+WHERE 
+ badge_count >= 6 
+</code>
 
+# 뱃지가 6개 이상인 트레이너
 
 ## 2-8. 새로운 집계함수
 
